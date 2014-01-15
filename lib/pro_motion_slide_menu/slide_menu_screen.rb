@@ -12,6 +12,10 @@ module ProMotionSlideMenu
     # screen shown as the hidden menu, and the screen shown as the content controller.
     #
 
+    def prefersStatusBarHidden
+      true
+    end
+
     def self.new(menu, content, options={})
       screen = self.revealControllerWithFrontViewController(nil, rightViewController: nil, options: nil)
       screen.on_create(options) if screen.respond_to?(:on_create)
